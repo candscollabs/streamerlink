@@ -1,0 +1,75 @@
+html {
+    --s: 60px; /* control the size*/
+    --c1: #01c622;
+    --c2: #000000;
+    --c3: #011805;
+    
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g1: var(--_s) conic-gradient(at calc(500%/6) 50%,var(--c3) 25%,#0000 0);
+    --_g2: var(--_s) conic-gradient(at calc(200%/3) 50%,var(--c2) 25%,#0000 0);
+    background:
+      var(--s) var(--s)/var(--_g1),0 0/var(--_g1),
+      var(--s) var(--s)/var(--_g2),0 0/var(--_g2),
+      repeating-conic-gradient(var(--c1) 0 25%,#0000 0 50%) 0 0/var(--_s),
+      linear-gradient(var(--c1) calc(100%/3),var(--c2) 0 calc(200%/3),var(--c3) 0)
+       0 0/var(--s) var(--s);
+  }
+
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    font-size: larger;
+}
+
+.form-container{
+    width: 500px;
+    background-color: #ffffffbb;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form+p form p{
+    text-align: center;
+}
+
+input, button{
+    border-radius: 4px;
+    border: unset;
+    padding: 15px 30px;
+    font-size: larger;
+}
+
+button{
+    background-color: #01c622;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error{
+    color: rgb(199, 57, 57);
+}
+
+.escondido{
+    display: none;
+}
+
+.sr-only{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
